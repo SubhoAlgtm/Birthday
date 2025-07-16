@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Dona 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      color: #ff0033;
+      text-align: center;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('DonaGiri.jpg') center center / cover no-repeat;
+      z-index: -3;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.08);
+      z-index: -2;
+    }
+
+    /* INTRO PAGE */
+    .intro-page {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      background: url('intro.jpg') center center / cover no-repeat;
+      text-shadow: 1px 1px 3px #000;
+      color: #ff0033;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .intro-page h2 {
+      font-size: 2.2em;
+      font-family: 'Great Vibes', cursive;
+      margin-bottom: 20px;
+      margin-right: 240px;
+    }
+
+    .intro-button {
+      background: #ff5f6d;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 1.1em;
+      cursor: pointer;
+      color: white;
+      box-shadow: 0 0 10px #ff5f6d;
+      transition: all 0.3s ease-in-out;
+      margin-right: 270px;
+    }
+
+    .intro-button:hover {
+      background: #ff416c;
+      transform: scale(1.05);
+    }
+
+    .page {
+      width: 100vw;
+      height: 100vh;
+      display: none;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 0;
+      padding-right: 120px;
+      box-sizing: border-box;
+    }
+
+    .active {
+      display: flex;
+    }
+
+    #page1 {
+      padding-top: 125px;
+      padding-left: 355px;
+    }
+
+    #page2 {
+      padding-bottom: 200px;
+      padding-right: 200px;
+    }
+
+    h1 {
+      font-size: 3.2em;
+      margin-bottom: 20px;
+      font-family: 'Great Vibes', cursive;
+      animation: fadeInDown 2s ease-out;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 500px;
+      text-align: center;
+      margin-left: 65px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    #Scan {
+      margin-top: 250px;
+    }
+
+    #second {
+      margin-right: 60px;
+    }
+
+    .gift-icon {
+      display: inline-block;
+      animation: bounceGift 1.4s infinite ease-in-out;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      margin-left: 40px;
+      font-size: 1em;
+      background: #ff5f6d;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+      color: white;
+      animation: giftPulse 2s infinite;
+    }
+
+    button:hover {
+      background: #ff416c;
+      transform: scale(1.15);
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes giftPulse {
+      0% { transform: scale(1); box-shadow: 0 0 10px #ff5f6d; }
+      50% { transform: scale(1.05); box-shadow: 0 0 20px #ff416c; }
+      100% { transform: scale(1); box-shadow: 0 0 10px #ff5f6d; }
+    }
+
+    @keyframes bounceGift {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .qr-code {
+      margin-top: 20px;
+      background: white;
+      padding: 10px;
+      border-radius: 12px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 20px;
+      margin-top: 180px;
+      margin-right: 570px;
+      padding-right: 20px;
+    }
+
+    .confetti {
+      display: none;
+    }
+
+    /* 🎉 Image beside button */
+    .gift-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-left: 65px;
+    }
+
+    .subhojit-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 8px rgba(0,0,0,0.4);
+      border: 2px solid #fff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Intro Page -->
+<div class="intro-page" id="introPage">
+  <h2>Click Me Please, I have an amazing thing for you! 💌</h2>
+  <button class="intro-button" onclick="startSurprise()">Let's Begin</button>
+</div>
+
+<!-- Page 1: Birthday Message -->
+<div class="page" id="page1">
+  <h1>🎂 Happy Birthday Dona 🎂</h1>
+  <p>
+    On this special day, I just want you to know how much you mean to me.<br>
+    Your smile lights up my world.<br>
+    May your day be filled with love, laughter, and sweet memories. 💖
+  </p>
+
+  <!-- 🎁 Image + Button -->
+  <div class="gift-row">
+    <img src="Subhojit.jpg" alt="Subhojit" class="subhojit-img">
+    <button onclick="nextPage()">
+      <span class="gift-icon">🎁</span> Open Your Surprise
+    </button>
+  </div>
+</div>
+
+<!-- Page 2: QR Code -->
+<div class="page" id="page2" style="justify-content:center; align-items:center; text-align:center;">
+  <h1 id="Scan">🎉 Scan Me 🎉</h1>
+  <p id="second">This QR code has something special from me — a voice straight from my heart ❤️</p>
+  <img src="qrcode.png" class="qr-code" width="200" alt="QR Code">
+  <div class="btn-group">
+    <button onclick="backPage()">🔙 Back</button>
+  </div>
+</div>
+
+<!-- Background Music -->
+<audio id="bg-music" src="DonaBGM.mp3" preload="auto" loop></audio>
+
+<script>
+  function startSurprise() {
+    const audio = document.getElementById('bg-music');
+    audio.play().catch(() => {});
+    document.getElementById('introPage').style.display = 'none';
+    document.getElementById('page1').classList.add('active');
+  }
+
+  function nextPage() {
+    document.getElementById('page1').classList.remove('active');
+    document.getElementById('page2').classList.add('active');
+  }
+
+  function backPage() {
+    document.getElementById('page2').classList.remove('active');
+    document.getElementById('page1').classList.add('active');
+  }
+</script>
+
+</body>
+</html>
